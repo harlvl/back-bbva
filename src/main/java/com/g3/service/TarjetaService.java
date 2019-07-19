@@ -99,4 +99,8 @@ public class TarjetaService {
             return null;
         }
     }
+
+    public List<Tarjeta> getByClient(Long clientId) {
+        return tarjetaRepository.findByClienteId(clientId);
+    }
 }
