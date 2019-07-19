@@ -24,4 +24,9 @@ public class ReciboController {
     public Recibo crearRecibo(@RequestBody Recibo recibo) {
         return reciboService.crearRecibo(recibo);
     }
+
+    @GetMapping("/getByClient/{dni}/{ruc}")
+    public List<Recibo> getRecibosPorCliente(@PathVariable("dni") String dni, @PathVariable("ruc") String ruc) {
+        return reciboService.getRecibosPorCliente(dni, ruc);
+    }
 }
