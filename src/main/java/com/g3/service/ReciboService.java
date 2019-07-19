@@ -36,4 +36,17 @@ public class ReciboService {
         }
         return result;
     }
+
+    public List<Recibo> getAllByClient(String dni) {
+        List<Recibo> recibos = reciboRepository.findAll();
+        List<Recibo> result = new ArrayList<>();
+        for (Recibo r : recibos) {
+            String r_dni = r.getDni();
+
+            if (r_dni.equals(dni)) {
+                result.add(r);
+            }
+        }
+        return result;
+    }
 }

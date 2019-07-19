@@ -29,4 +29,9 @@ public class ReciboController {
     public List<Recibo> getRecibosPorCliente(@PathVariable("dni") String dni, @PathVariable("ruc") String ruc) {
         return reciboService.getRecibosPorCliente(dni, ruc);
     }
+
+    @GetMapping("/getAllByClient/{dni}")
+    public List<Recibo> getAllByClient(@PathVariable("dni") String dni) {
+        return reciboService.getAllByClient(dni);
+    }
 }
